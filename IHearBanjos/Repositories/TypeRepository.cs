@@ -1,6 +1,9 @@
-﻿namespace IHearBanjos.Repositories
+﻿using Microsoft.Extensions.Configuration;
+
+namespace IHearBanjos.Repositories
 {
-    public class TypeRepository : TypeRepository, ITypeRepository
+    public class TypeRepository : BaseRepository, ITypeRepository
     {
+        public TypeRepository(IConfiguration configuration) : base(configuration) { }
     }
 }

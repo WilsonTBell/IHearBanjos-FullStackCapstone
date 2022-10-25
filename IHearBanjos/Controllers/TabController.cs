@@ -1,9 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using System.Security.Claims;
+using IHearBanjos.Models;
+using IHearBanjos.Repositories;
+
 
 namespace IHearBanjos.Controllers
 {
@@ -11,29 +10,64 @@ namespace IHearBanjos.Controllers
     [Route("[controller]")]
     public class TabController : ControllerBase
     {
-        private static readonly string[] Summaries = new[]
-        {
-            "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
-        };
+        private readonly ITabRepository _tabRepository;
+        private readonly IBanjoistRepository _banjoistRepository;
 
-        private readonly ILogger<TabController> _logger;
-
-        public TabController(ILogger<TabController> logger)
+        public TabController(ITabRepository tabRepository, IBanjoistRepository banjoistRepository)
         {
-            _logger = logger;
+            _tabRepository = tabRepository;
+            _banjoistRepository = banjoistRepository;
         }
 
+        // GET: api/<ValuesController>
         [HttpGet]
-        public IEnumerable<WeatherForecast> Get()
+        public IActionResult Get()
         {
-            var rng = new Random();
-            return Enumerable.Range(1, 5).Select(index => new WeatherForecast
+            return Ok(_tabRepository.GetAllTabs());
+        }
+
+        [HttpGet("MyPosts")]
+        public IActionResult GetMyPosts()
+        {
+            Banjoist currentBanjoist = GetCurrentBanjoist();
+            return Ok(_tabRepository.GetTabsByBanjoistId(currentBanjoist.Id));
+        }
+
+        // GET api/<ValuesController>/5
+        [HttpGet("{id}")]
+        public IActionResult Get(int id)
+        {
+            var tab = _tabRepository.GetTabById(id);
+            if (tab == null)
             {
-                Date = DateTime.Now.AddDays(index),
-                TemperatureC = rng.Next(-20, 55),
-                Summary = Summaries[rng.Next(Summaries.Length)]
-            })
-            .ToArray();
+                return NotFound();
+            }
+            return Ok(tab);
+        }
+
+        // POST api/<ValuesController>
+        [HttpPost]
+        public void Tab([FromBody] string value)
+        {
+        }
+
+        // PUT api/<ValuesController>/5
+        [HttpPut("{id}")]
+        public void Put(int id, [FromBody] string value)
+        {
+        }
+
+        // DELETE api/<ValuesController>/5
+        [HttpDelete("{id}")]
+        public void Delete(int id)
+        {
+        }
+
+        private Banjoist GetCurrentBanjoist()
+        {
+            var firebaseUserId = User.FindFirst(ClaimTypes.NameIdentifier).Value;
+            return _banjoistRepository.GetByFirebaseUserId(firebaseUserId);
         }
     }
 }
+

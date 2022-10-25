@@ -4,7 +4,9 @@ import Login from "./Login";
 import Register from "./Register";
 import Hello from "./Hello";
 import { Banjoists } from "./Banjoists";
-
+import { AllTabs } from "./AllTabs";
+import { MyTabs } from "./MyTabs";
+import { TabDetail } from "./TabDetail";
 
 export default function ApplicationViews({ isLoggedIn, isAdmin }) {
     return (

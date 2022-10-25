@@ -1,0 +1,53 @@
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { Button, Form, FormGroup, Label, Input } from "reactstrap";
+import { addTab } from "../modules/tabManager";
+
+export default function TabAddForm() {
+    const navigate = useNavigate();
+    const [tab, setTabName] = useState({
+        Id: 0,
+        Name: ""
+    });
+
+    const handleSaveButtonClick = (event) => {
+        event.preventDefault()
+
+        return addTab(tag)
+            .then(() => {
+                navigate("/tabs")
+            })
+    }
+
+
+    return <>
+
+
+        <Form className="tagForm">
+            <FormGroup>
+                <Label for="Name">Tab</Label>
+                <Input
+                    id="tab"
+                    name="tab"
+                    type="text"
+                    value={tag.Name}
+                    onChange={
+                        (evt) => {
+                            const copy = { ...tag }
+                            copy.Name = evt.target.value
+                            setTabName(copy)
+                        }
+                    }
+                />
+            </FormGroup>
+            <FormGroup>
+                <Button onClick={(clickEvent) => handleSaveButtonClick(clickEvent)}
+                    className="btn btn-primary">Save</Button>
+            </FormGroup>
+        </Form>
+        <Button onClick={() => navigate("/tag")}>Cancel</Button>
+
+
+    </>
+
+}

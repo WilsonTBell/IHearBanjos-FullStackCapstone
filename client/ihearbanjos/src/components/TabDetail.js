@@ -18,7 +18,7 @@ export const TabDetail = () => {
         getTab(tabId);
     }, []);
 
-    if (!post) { return null }
+    if (!tab) { return null }
     return (
         <div className="container">
             <div className="row justify-content-center">

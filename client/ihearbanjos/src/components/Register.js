@@ -6,7 +6,7 @@ import { register } from "../modules/authManager";
 export default function Register() {
     const navigate = useNavigate();
 
-    const [displayName, setName] = useState();
+    const [name, setName] = useState();
     const [email, setEmail] = useState();
     const [password, setPassword] = useState();
     const [confirmPassword, setConfirmPassword] = useState();
@@ -16,14 +16,11 @@ export default function Register() {
         if (password && password !== confirmPassword) {
             alert("Passwords don't match. Do better.");
         } else {
-            const userProfile = {
-                firstName,
-                lastName,
-                displayName,
-                imageLocation,
+            const banjoist = {
+                name,
                 email,
             };
-            register(userProfile, password).then(() => navigate("/"));
+            register(banjoist, password).then(() => navigate("/"));
         }
     };
 

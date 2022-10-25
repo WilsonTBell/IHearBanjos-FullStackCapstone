@@ -114,11 +114,12 @@ namespace IHearBanjos.Repositories
                             Id = DbUtils.GetInt(reader, "id"),
                             Title = DbUtils.GetString(reader, "title"),
                             Description = DbUtils.GetString(reader, "description"),
-                            TypeId = DbUtils.GetNullableInt(reader, "typeId"),
+                            TypeId = DbUtils.GetInt(reader, "typeId"),
                             Type = new Type()
                             {
                                 Name = DbUtils.GetString(reader, "type")
                             },
+                            DifficultyId = DbUtils.GetInt(reader, "difficultyId"),
                             Difficulty = new Difficulty()
                             {
                                 Name = DbUtils.GetString(reader, "difficulty")
@@ -151,11 +152,12 @@ namespace IHearBanjos.Repositories
                 Id = DbUtils.GetInt(reader, "id"),
                 Title = DbUtils.GetString(reader, "title"),
                 Description = DbUtils.GetString(reader, "description"),
-                TypeId = DbUtils.GetNullableInt(reader, "typeId"),
+                TypeId = DbUtils.GetInt(reader, "typeId"),
                 Type = new Type()
                 {
                     Name = DbUtils.GetString(reader, "type")
                 },
+                DifficultyId = DbUtils.GetInt(reader, "difficultyId"),
                 Difficulty = new Difficulty()
                 {
                     Name = DbUtils.GetString(reader, "difficulty")
