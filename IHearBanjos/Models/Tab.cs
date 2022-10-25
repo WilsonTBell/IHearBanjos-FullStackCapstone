@@ -23,7 +23,7 @@ namespace IHearBanjos.Models
         [Required]
         [DisplayName("Type")]
         public int? TypeId { get; set; }
-        public System.Type Type { get; set; }
+        public Type Type { get; set; }
 
         [Required]
         [DisplayName("Difficulty")]

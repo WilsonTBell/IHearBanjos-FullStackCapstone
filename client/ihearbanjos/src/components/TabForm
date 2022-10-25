@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { Button, Form, FormGroup, Label, Input } from "reactstrap";
 import { addTab } from "../modules/tabManager";
 
-export default function TabAddForm() {
+export const TabForm = () => {
     const navigate = useNavigate();
     const [tab, setTabName] = useState({
         Id: 0,

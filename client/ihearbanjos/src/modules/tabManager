@@ -7,7 +7,7 @@ export const getAllTabs = () => {
         .then((res) => res.json())
 };
 
-export const getPostById = (tabId) => {
+export const getTabById = (tabId) => {
     return fetch(`/api/tabs/${tabId}`)
         .then((res) => res.json())
 };
@@ -27,7 +27,7 @@ export const getMyTabs = () => {
             }
         })
     })
-}
+};
 
 export const addTab = (tab) => {
     return getToken().then((token) => {
