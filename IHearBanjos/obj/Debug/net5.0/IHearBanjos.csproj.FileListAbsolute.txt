@@ -1,0 +1,7 @@
+C:\Users\wilso\workspace\csharp\IHearBanjosCapstone\IHearBanjos\obj\Debug\net5.0\IHearBanjos.csproj.AssemblyReference.cache
+C:\Users\wilso\workspace\csharp\IHearBanjosCapstone\IHearBanjos\obj\Debug\net5.0\IHearBanjos.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\wilso\workspace\csharp\IHearBanjosCapstone\IHearBanjos\obj\Debug\net5.0\IHearBanjos.AssemblyInfoInputs.cache
+C:\Users\wilso\workspace\csharp\IHearBanjosCapstone\IHearBanjos\obj\Debug\net5.0\IHearBanjos.AssemblyInfo.cs
+C:\Users\wilso\workspace\csharp\IHearBanjosCapstone\IHearBanjos\obj\Debug\net5.0\IHearBanjos.csproj.CoreCompileInputs.cache
+C:\Users\wilso\workspace\csharp\IHearBanjosCapstone\IHearBanjos\obj\Debug\net5.0\IHearBanjos.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\wilso\workspace\csharp\IHearBanjosCapstone\IHearBanjos\obj\Debug\net5.0\IHearBanjos.MvcApplicationPartsAssemblyInfo.cache
