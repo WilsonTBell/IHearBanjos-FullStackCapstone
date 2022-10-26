@@ -1,14 +1,14 @@
 import { getToken } from "./authManager";
 
-const baseUrl = 'api/tabs';
+const baseUrl = 'api/tab';
 
 export const getAllTabs = () => {
-    return fetch('/api/tabs')
+    return fetch('/api/tab')
         .then((res) => res.json())
 };
 
 export const getTabById = (tabId) => {
-    return fetch(`/api/tabs/${tabId}`)
+    return fetch(`/api/tab/${tabId}`)
         .then((res) => res.json())
 };
 
@@ -37,7 +37,7 @@ export const addTab = (tab) => {
                 Authorization: `Bearer ${token}`,
                 "Content-Type": "application/json",
             },
-            body: JSON.stringify(tag),
+            body: JSON.stringify(tab),
         }).then((resp) => {
             if (resp.ok) {
                 return resp.json();

@@ -1,11 +1,11 @@
 import firebase from "firebase/app";
 import "firebase/auth";
 
-const _apiUrl = "/api/userprofile";
+const _apiUrl = "/api/Banjoist";
 
 const _doesUserExist = (firebaseUserId) => {
     return getToken().then((token) =>
-        fetch(`${_apiUrl}/DoesUserExist/${firebaseUserId}`, {
+        fetch(`${_apiUrl}/DoesBanjoistExist/${firebaseUserId}`, {
             method: "GET",
             headers: {
                 Authorization: `Bearer ${token}`

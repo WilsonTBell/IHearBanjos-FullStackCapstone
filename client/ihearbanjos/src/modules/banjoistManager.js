@@ -2,7 +2,7 @@ import { getToken } from "./authManager";
 import firebase from "firebase/app";
 import "firebase/auth";
 
-const apiUrl = "/api/Banjoists";
+const apiUrl = "/api/Banjoist";
 
 export const getBanjoists = () => {
     return getToken().then((token) => {

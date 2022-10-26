@@ -7,7 +7,7 @@ import { Banjoists } from "./Banjoists";
 import { AllTabs } from "./AllTabs";
 import { MyTabs } from "./MyTabs";
 import { TabDetail } from "./TabDetail";
-import TabForm from "./TabForm";
+import { TabForm } from "./TabForm";
 
 export default function ApplicationViews({ isLoggedIn, isAdmin }) {
     return (

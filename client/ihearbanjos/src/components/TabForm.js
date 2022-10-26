@@ -13,7 +13,7 @@ export const TabForm = () => {
     const handleSaveButtonClick = (event) => {
         event.preventDefault()
 
-        return addTab(tag)
+        return addTab(tab)
             .then(() => {
                 navigate("/tabs")
             })
@@ -23,17 +23,17 @@ export const TabForm = () => {
     return <>
 
 
-        <Form className="tagForm">
+        <Form className="tabForm">
             <FormGroup>
                 <Label for="Name">Tab</Label>
                 <Input
                     id="tab"
                     name="tab"
                     type="text"
-                    value={tag.Name}
+                    value={tab.Name}
                     onChange={
                         (evt) => {
-                            const copy = { ...tag }
+                            const copy = { ...tab }
                             copy.Name = evt.target.value
                             setTabName(copy)
                         }
@@ -45,7 +45,7 @@ export const TabForm = () => {
                     className="btn btn-primary">Save</Button>
             </FormGroup>
         </Form>
-        <Button onClick={() => navigate("/tag")}>Cancel</Button>
+        <Button onClick={() => navigate("/tab")}>Cancel</Button>
 
 
     </>

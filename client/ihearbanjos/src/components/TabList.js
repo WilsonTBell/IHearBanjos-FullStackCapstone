@@ -1,6 +1,9 @@
 import { Tab } from "./Tab";
+import { useNavigate } from "react-router-dom";
+import { Button } from "reactstrap";
 
 export const TabList = ({ tabs }) => {
+    const navigate = useNavigate()
 
     return (
         <div className="container">

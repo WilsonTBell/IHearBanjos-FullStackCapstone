@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import getMyTabs from "../modules/tabManager";
+import { getMyTabs } from "../modules/tabManager";
 import { TabList } from "./TabList";
 
 export const MyTabs = () => {

@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
 import { Card, CardBody } from "reactstrap"
-import getTabById from "../modules/tabManager"
+import { getTabById } from "../modules/tabManager"
 
 export const TabDetail = () => {
     const [tab, setTab] = useState(null)

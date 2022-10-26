@@ -40,6 +40,9 @@ export default function Header({ isLoggedIn, isAdmin }) {
                                         <NavLink tag={RRNavLink} to="/banjoists">Banjoists</NavLink>
                                     </NavItem>
                                 }
+                                <NavItem>
+                                    <NavLink onClick={logout}>LOGOUT</NavLink>
+                                </NavItem>
                             </>
                         }
                     </Nav>
