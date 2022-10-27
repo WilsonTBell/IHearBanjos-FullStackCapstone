@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Card, CardBody } from "reactstrap";
+import { Card, CardBody, Button } from "reactstrap";
 
 export const Tab = ({ tab, banjoist }) => {
     return (
@@ -12,6 +12,7 @@ export const Tab = ({ tab, banjoist }) => {
                 </p>
                 <p>Type: {tab.type.name}</p>
                 <p>Difficulty: {tab.difficulty.name}</p>
+                <Button>Add to Favorites</Button>
             </CardBody>
         </Card>
     )
