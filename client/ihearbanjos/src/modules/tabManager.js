@@ -1,6 +1,6 @@
 import { getToken } from "./authManager";
 
-const baseUrl = 'api/tab';
+const baseUrl = '/api/tab';
 
 export const getAllTabs = () => {
     return fetch('/api/tab')

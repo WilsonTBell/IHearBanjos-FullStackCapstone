@@ -2,11 +2,13 @@ import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
 import { Card, CardBody } from "reactstrap"
 import { getTabById } from "../modules/tabManager"
+import { IKImage } from 'imagekitio-react';
 
 export const TabDetail = () => {
     const [tab, setTab] = useState(null)
     const { tabId } = useParams()
 
+    const urlEndpoint = 'https://ik.imagekit.io/thv8ujxgn/';
 
     const getTab = (id) => {
         getTabById(id).then(data => {
@@ -22,7 +24,10 @@ export const TabDetail = () => {
     return (
         <div className="container">
             <div className="row justify-content-center">
-                <img src='https://www.firstbenefits.org/wp-content/uploads/2017/10/placeholder.png' alt={tab.title} />
+                <IKImage
+                    urlEndpoint={urlEndpoint}
+                    path={tab.imageLocation}
+                />
                 <Card>
                     <CardBody>
                         <p>
