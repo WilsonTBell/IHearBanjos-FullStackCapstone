@@ -51,3 +51,20 @@ export const addTab = (tab) => {
         });
     });
 };
+
+export const editTab = (tab) => {
+
+    return fetch(baseUrl + `/${tab.id}`, {
+        method: "PUT",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify(tab),
+    });
+};
+
+export const deleteTab = (tabId) => {
+    return fetch(baseUrl + `/${tabId}`, {
+        method: "DELETE"
+    });
+};

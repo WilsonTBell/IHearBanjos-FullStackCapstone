@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { getAllTabs } from "../modules/tabManager";
-import { TabList } from "./TabList";
+import { AllListTab } from "./AllListTab";
 import { useNavigate } from "react-router-dom";
 import { Button } from "reactstrap";
 
@@ -23,7 +23,13 @@ export const AllTabs = () => {
                 className="btn btn-primary">
                 New Tab
             </Button>
-            <TabList tabs={tabs} />
+            <div className="container">
+                <div className="row justify-content-center">
+                    {tabs?.map((tab) => (
+                        <AllListTab tab={tab} key={tab?.id} user={tab.banjoist} />
+                    ))}
+                </div>
+            </div>
         </div>
     )
 }

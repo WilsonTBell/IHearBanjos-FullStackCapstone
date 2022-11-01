@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { getMyTabs } from "../modules/tabManager";
-import { TabList } from "./TabList";
+import { MyListTab } from "./MyListTab";
 
 export const MyTabs = () => {
     const [tabs, setTabs] = useState();
@@ -11,5 +11,13 @@ export const MyTabs = () => {
         })
     }, []);
 
-    return <TabList tabs={tabs} />;
+    return (
+        <div className="container">
+            <div className="row justify-content-center">
+                {tabs?.map((tab) => (
+                    <MyListTab tab={tab} key={tab?.id} user={tab.banjoist} />
+                ))}
+            </div>
+        </div>
+    )
 }
