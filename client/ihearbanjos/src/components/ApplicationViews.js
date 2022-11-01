@@ -8,6 +8,7 @@ import { AllTabs } from "./AllTabs";
 import { MyTabs } from "./MyTabs";
 import { TabDetail } from "./TabDetail";
 import { TabForm } from "./TabForm";
+import { TabEdit } from "./TabEdit";
 
 export default function ApplicationViews({ isLoggedIn, isAdmin }) {
     return (
@@ -27,6 +28,8 @@ export default function ApplicationViews({ isLoggedIn, isAdmin }) {
                     />
                     <Route path="tab/add" element={isLoggedIn ? <TabForm /> : <Navigate to="/login" />} />
                     <Route path="tab/:tabId" element={isLoggedIn ? <TabDetail /> : <Navigate to="/login" />} />
+                    <Route path="tab/:tabId" element={isLoggedIn ? <TabDetail /> : <Navigate to="/login" />} />
+                    <Route path="tab/edit/:tabId" element={isLoggedIn ? <TabEdit /> : <Navigate to="/login" />} />
                     <Route path="tab" element={isLoggedIn ? <AllTabs /> : <Navigate to="/login" />} />
                     <Route path="mytabs" element={isLoggedIn ? <MyTabs /> : <Navigate to="/login" />} />
                     <Route path="*" element={<p>Whoops, nothing here...</p>} />

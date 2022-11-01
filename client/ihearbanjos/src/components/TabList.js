@@ -1,4 +1,4 @@
-import { Tab } from "./Tab";
+import { Tab } from "./AllListTab";
 import { useNavigate } from "react-router-dom";
 import { Button } from "reactstrap";
 

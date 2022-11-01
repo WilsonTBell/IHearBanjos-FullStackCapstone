@@ -1,8 +1,11 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import { Card, CardBody, Button } from "reactstrap";
+import { deleteTab } from "../modules/tabManager";
 
-export const Tab = ({ tab, banjoist }) => {
+export const MyListTab = ({ tab }) => {
+    const navigate = useNavigate()
+
     return (
         <Card>
             <p className="text-left px-2">Posted by: {tab.banjoist.name}</p>
@@ -12,8 +15,9 @@ export const Tab = ({ tab, banjoist }) => {
                 </p>
                 <p>Type: {tab.type.name}</p>
                 <p>Difficulty: {tab.difficulty.name}</p>
-                <Button>Add to Favorites</Button>
+                <Button onClick={() => navigate(`/tab/edit/${tab.id}`)}>Edit</Button>
+                <Button onClick={() => { deleteTab(tab.id); window.location.reload(false) }}>Delete</Button>
             </CardBody>
-        </Card>
+        </Card >
     )
 }
